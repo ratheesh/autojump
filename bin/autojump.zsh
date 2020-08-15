@@ -56,7 +56,8 @@ j() {
     local output="$(autojump ${@})"
     if [[ -d "${output}" ]]; then
         if [ -t 1 ]; then  # if stdout is a terminal, use colors
-                echo -e "\\033[31m${output}\\033[0m"
+                # echo -e "\\033[31m${output}\\033[0m"
+                echo -e "\\033[1;38;5;33m[\\033[1;38;5;1mPWD\\033[1;38;5;33m]\\033[1;38;5;178m➜ \\033[0m\\033[3;38;5;67m${output}\\033[0m"
         else
                 echo -e "${output}"
         fi
